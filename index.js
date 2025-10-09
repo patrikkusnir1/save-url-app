@@ -1,14 +1,5 @@
 
-let myLeads = `["www.awesomelead.com"]`;
-// turn myLeads into an array 
-// push new value to the array
-// turn the array into string again
-// console.log string using typeof
-
-myLeads = JSON.parse(myLeads);
-myLeads.push("www.lead2.com");
-myLeads = JSON.stringify(myLeads);
-console.log(typeof myLeads);
+let myLeads = [];
 
 const inputEl = document.getElementById("input-el");
 const inputBtn = document.getElementById("input-btn");
@@ -16,8 +7,15 @@ const ulEl = document.getElementById("ul-el");
 
 inputBtn.addEventListener("click", function () {
   myLeads.push(inputEl.value);
-  renderLeads();
   inputEl.value = "";
+  // Save the myLeads array to localStorage
+  // PS: remember JSON.stringify()
+
+  localStorage.setItem("myLeads", JSON.stringify(myLeads) )
+  renderLeads();
+
+  // verify that works
+  console.log(localStorage.getItem("myLeads"))
 });
 
 // less efficient way
