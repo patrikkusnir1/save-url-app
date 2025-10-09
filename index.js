@@ -5,16 +5,20 @@ const inputEl = document.getElementById("input-el");
 const inputBtn = document.getElementById("input-btn");
 const ulEl = document.getElementById("ul-el");
 
+// Get the leads from the localStorage - JSON.parse
+// Store it in a variable, leadsFromLocalStorage
+// Log out the variable
+localStorage.clear()
+let leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
+console.log(leadsFromLocalStorage);
+
 inputBtn.addEventListener("click", function () {
   myLeads.push(inputEl.value);
   inputEl.value = "";
-  // Save the myLeads array to localStorage
-  // PS: remember JSON.stringify()
-
   localStorage.setItem("myLeads", JSON.stringify(myLeads) )
   renderLeads();
 
-  // verify that works
+  // verify that it works
   console.log(localStorage.getItem("myLeads"))
 });
 
@@ -22,8 +26,6 @@ inputBtn.addEventListener("click", function () {
 function renderLeads() {
   let listItems = "";
   for (let i = 0; i < myLeads.length; i++) {
-    // Refactor the code below to use a template string
-    // listItems += "<li><a target='_blank' href='" + myLeads[i] + "'>" + myLeads[i] + "</a></li>";
     listItems += `
     <li>
       <a target='_blank' href='${myLeads[i]}'>
