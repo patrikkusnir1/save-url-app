@@ -15,12 +15,16 @@ inputBtn.addEventListener("click", function () {
 function renderLeads() {
   let listItems = "";
   for (let i = 0; i < myLeads.length; i++) {
-    // Wrap the lead in an anchor tag (<a>) inside the <li>
-    // Can you make the link open in a new tab?
-    listItems += "<li><a target='_blank' href='" + myLeads[i] + "'>" + myLeads[i] + "</a></li>";
-    console.log(listItems)
-  }
-  ulEl.innerHTML = listItems;
+    // listItems += "<li><a target='_blank' href='" + myLeads[i] + "'>" + myLeads[i] + "</a></li>";
+    listItems += `
+      <li>
+          <a target='_blank' href='${myLeads[i]}'>
+            ${myLeads[i]}
+          </a>
+      </li>
+    `;
+  };
+  ulEl.innerHTML = listItems;;
 }
 
 
