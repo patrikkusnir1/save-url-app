@@ -11,8 +11,9 @@ input {
   padding: 10px;
   border: 1px solid #5f9341;
   margin-bottom: 4px;
+  font-size: 16px;
 }
- /* style the delete button according to the design */
+
 #delete-btn {
   background-color: white;
   color: #5f9341;
@@ -24,6 +25,7 @@ button {
   color: white;
   border: 1px solid #5f9341;
   font-weight: bold;
+  font-size: 16px;
 }
 
 ul {
